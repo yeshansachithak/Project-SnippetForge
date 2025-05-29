@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import 'highlight.js/styles/github.css';
+import rehypeSlug from 'rehype-slug';
 
 export default function SnippetViewer({ path }) {
   const [content, setContent] = useState('');
@@ -36,7 +37,7 @@ export default function SnippetViewer({ path }) {
         <ReactMarkdown
           children={content}
           remarkPlugins={[remarkGfm]}
-          rehypePlugins={[rehypeHighlight]}
+          rehypePlugins={[rehypeHighlight, rehypeSlug]}
         />
       </div>
     </div>
