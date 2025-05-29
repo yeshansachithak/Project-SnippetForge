@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
-import 'highlight.js/styles/github.css';
 import rehypeSlug from 'rehype-slug';
+import 'highlight.js/styles/github-dark.css'; // use a dark-friendly theme
 
 export default function SnippetViewer({ path }) {
   const [content, setContent] = useState('');
@@ -33,7 +33,7 @@ export default function SnippetViewer({ path }) {
 
   return (
     <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 shadow-md rounded-xl p-6 mb-8">
-      <div className="prose max-w-none dark:prose-invert">
+      <div className="prose max-w-none dark:prose-invert [&_.hljs]:rounded [&_.hljs]:p-4 [&_.hljs]:bg-zinc-800">
         <ReactMarkdown
           children={content}
           remarkPlugins={[remarkGfm]}
