@@ -31,12 +31,14 @@ export default function SnippetViewer({ path }) {
   }, [content]);
 
   return (
-    <div className="prose max-w-none dark:prose-invert">
-      <ReactMarkdown
-        children={content}
-        remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeHighlight]}
-      />
+    <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 shadow-md rounded-xl p-6 mb-8">
+      <div className="prose max-w-none dark:prose-invert">
+        <ReactMarkdown
+          children={content}
+          remarkPlugins={[remarkGfm]}
+          rehypePlugins={[rehypeHighlight]}
+        />
+      </div>
     </div>
   );
 }

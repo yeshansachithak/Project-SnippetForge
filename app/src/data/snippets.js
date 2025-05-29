@@ -12,6 +12,13 @@ const snippets = [
   { id: 11, title: 'Redux Toolkit', file: '/snippets/11-redux-toolkit.md' },
   { id: 12, title: 'Custom Hook', file: '/snippets/12-custom-hook.md' },
   { id: 13, title: 'Image Upload Preview', file: '/snippets/13-upload-preview.md' },
+  { id: 14, title: 'Todo App with React + Node', file: '/snippets/14-todo-app-fullstack.md' },
+  { id: 15, title: 'Form Validation (Hook Form)', file: '/snippets/15-react-hook-form-validation.md' },
+  { id: 16, title: 'Animations (Framer Motion)', file: '/snippets/16-framer-motion-animation.md' },
+  { id: 17, title: 'Real-time Updates (Firebase)', file: '/snippets/17-react-firebase-realtime.md' },
+  { id: 18, title: 'File Upload with Progress', file: '/snippets/18-file-upload-progress.md' },
+  { id: 19, title: 'Theme Toggle with Context', file: '/snippets/19-dark-light-theme-context.md' },
+  { id: 20, title: 'Protected Routes (React Router)', file: '/snippets/20-protected-routes-react-router.md' },
 ];
 
 export default snippets;

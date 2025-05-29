@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import SnippetViewer from './components/SnippetViewer';
 import snippetsData from './data/snippets';
+import { ErrorBoundary } from './components/ErrorBoundary';
 
 export default function App() {
   const [search, setSearch] = useState('');
@@ -21,7 +22,9 @@ export default function App() {
       />
       {filteredSnippets.map(snippet => (
         <div key={snippet.id} className="mb-10">
-          <SnippetViewer path={snippet.file} />
+            <ErrorBoundary>
+              <SnippetViewer path={snippet.file} />
+            </ErrorBoundary>
         </div>
       ))}
     </div>
