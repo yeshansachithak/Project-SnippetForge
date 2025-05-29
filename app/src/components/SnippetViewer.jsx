@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
@@ -6,22 +6,29 @@ import 'highlight.js/styles/github.css';
 
 export default function SnippetViewer({ path }) {
   const [content, setContent] = useState('');
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch(path)
-      .then(res => {
-        if (!res.ok) throw new Error(`Failed to fetch ${path}`);
-        return res.text();
-      })
-      .then(setContent)
-      .catch(err => {
-        console.error('Markdown Load Error:', err.message);
-        setError(err.message);
-      });
+      .then(res => res.text())
+      .then(setContent);
   }, [path]);
 
-  if (error) return <div className="text-red-500">Error loading: {error}</div>;
+  useEffect(() => {
+    const blocks = document.querySelectorAll('pre code');
+    blocks.forEach(block => {
+      const button = document.createElement('button');
+      button.innerText = 'Copy';
+      button.className = 'absolute top-2 right-2 px-2 py-1 text-xs bg-gray-700 text-white rounded';
+      button.onclick = () => {
+        navigator.clipboard.writeText(block.innerText);
+        button.innerText = 'Copied!';
+        setTimeout(() => (button.innerText = 'Copy'), 1500);
+      };
+      const wrapper = block.parentElement;
+      wrapper.style.position = 'relative';
+      wrapper.appendChild(button);
+    });
+  }, [content]);
 
   return (
     <div className="prose max-w-none dark:prose-invert">
