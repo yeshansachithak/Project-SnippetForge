@@ -133,3 +133,6 @@ app/.DS_Store
 app/public/.DS_Store
 /app/public
 /.idea
+*.lock
+app/package-lock.json
+app/yarn.lock
