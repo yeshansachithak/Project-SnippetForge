@@ -1,12 +1,11 @@
 # 🎨 Tailwind CSS Button
-
 ```bash
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```
 
-In `tailwind.config.js`:
 ```js
+// tailwind.config.js
 content: ['./src/**/*.{js,jsx,ts,tsx}']
 ```
 
