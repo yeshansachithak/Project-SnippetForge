@@ -53,7 +53,7 @@ export default function App() {
                         />
                     </div>
 
-                    <div className="flex gap-2 mb-6 overflow-x-auto whitespace-nowrap py-2 scrollbar-hide">
+                    <div className="flex gap-2 mb-1 overflow-x-auto whitespace-nowrap py-2 scrollbar-hide">
                         {allConcepts.map(concept => (
                             <button
                                 key={concept}
@@ -67,16 +67,17 @@ export default function App() {
                                 {concept}
                             </button>
                         ))}
-                        {activeConcept && (
-                            <button
-                                onClick={() => setActiveConcept(null)}
-                                className="text-xs px-3 py-1 rounded-full border bg-red-500 text-white border-red-600 shrink-0"
-                            >
-                                Clear Filter
-                            </button>
-                        )}
                     </div>
-                    
+
+                    {activeConcept && (
+                        <button
+                            onClick={() => setActiveConcept(null)}
+                            className="text-xs px-3 py-1 rounded-full border bg-red-500 text-white border-red-600 shrink-0"
+                        >
+                            Clear Filter
+                        </button>
+                    )}
+
                 </div>
             </div>
 
@@ -89,13 +90,13 @@ export default function App() {
             </button>
 
             {/* Content below header */}
-            <div className="pt-[160px] px-4 max-w-7xl mx-auto">
+            <div className="pt-[220px] px-4 max-w-7xl mx-auto">
                 <div className="flex flex-row-reverse">
                     {/* Sidebar */}
                     <Sidebar isOpen={sidebarOpen} setIsOpen={setSidebarOpen}/>
 
                     {/* Main Content */}
-                    <div className="flex-1 pr-4 mt-4">
+                    <div className="flex-1 pr-4 mt-4 pt-4">
                         {filteredSnippets.map(snippet => (
                             <div key={snippet.id} id={snippet.slug} className="mb-10 scroll-mt-24">
                                 <ErrorBoundary>
