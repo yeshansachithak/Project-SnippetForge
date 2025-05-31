@@ -10,9 +10,21 @@ export default function App() {
     const [search, setSearch] = useState('');
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
+    // Inside your App component:
+    const allConcepts = Array.from(
+        new Set(snippetsData.flatMap(s => s.keyConcepts))
+    ).sort();
+
+    const [activeConcept, setActiveConcept] = useState(null);
+
+    // Filter logic
     const filteredSnippets = snippetsData.filter(snippet =>
-        snippet.title.toLowerCase().includes(search.toLowerCase())
+        snippet.title.toLowerCase().includes(search.toLowerCase()) && (!activeConcept || snippet.keyConcepts.includes(activeConcept))
     );
+
+    // const filteredSnippets = snippetsData.filter(snippet =>
+    //     snippet.title.toLowerCase().includes(search.toLowerCase())
+    // );
 
     return (
         <div className="relative">
@@ -40,6 +52,31 @@ export default function App() {
                             className="w-full p-3 border rounded dark:bg-gray-800 dark:text-white dark:border-gray-600"
                         />
                     </div>
+
+                    <div className="flex gap-2 mb-6 overflow-x-auto whitespace-nowrap py-2 scrollbar-hide">
+                        {allConcepts.map(concept => (
+                            <button
+                                key={concept}
+                                onClick={() => setActiveConcept(c => c === concept ? null : concept)}
+                                className={`text-xs px-3 py-1 rounded-full border transition shrink-0 ${
+                                    activeConcept === concept
+                                        ? 'bg-indigo-600 text-white border-indigo-600'
+                                        : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border-zinc-300 dark:border-zinc-700'
+                                }`}
+                            >
+                                {concept}
+                            </button>
+                        ))}
+                        {activeConcept && (
+                            <button
+                                onClick={() => setActiveConcept(null)}
+                                className="text-xs px-3 py-1 rounded-full border bg-red-500 text-white border-red-600 shrink-0"
+                            >
+                                Clear Filter
+                            </button>
+                        )}
+                    </div>
+                    
                 </div>
             </div>
 
