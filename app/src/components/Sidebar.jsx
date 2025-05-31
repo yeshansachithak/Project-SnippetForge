@@ -1,47 +1,44 @@
-import {useState} from 'react';
-import {motion, AnimatePresence} from 'framer-motion';
-import {FiMenu, FiX} from 'react-icons/fi'; // Menu and Close icons
+import {FiX} from 'react-icons/fi';
 import snippets from '../data/snippets';
 
-export default function Sidebar() {
-    const [open, setOpen] = useState(true);
-
+export default function Sidebar({isOpen, setIsOpen}) {
     return (
         <>
-            <button
-                onClick={() => setOpen(!open)}
-                className="fixed top-0 right-0 sm:top-20 sm:bottom-auto sm:right-6 bg-blue-600 hover:bg-blue-700 text-white p-3 shadow-lg transition z-50"
-                aria-label="Toggle TOC"
-            >
-                {open ? <FiX size={20}/> : <FiMenu size={20}/>}
-            </button>
+            {/* Overlay for mobile */}
+            {isOpen && (
+                <div className="fixed inset-0 bg-black bg-opacity-40 z-40 sm:hidden" onClick={() => setIsOpen(false)}/>
+            )}
 
-            <AnimatePresence>
-                {open && (
-                    <motion.div
-                        key="sidebar"
-                        initial={{x: '100%'}}
-                        animate={{x: 0}}
-                        exit={{x: '100%'}}
-                        transition={{type: 'tween', ease: 'easeOut', duration: 0.4}}
-                        className="fixed top-0 right-0 h-full w-64 sm:w-72 bg-white dark:bg-zinc-900 shadow-xl border-l border-gray-200 dark:border-zinc-700 p-4 overflow-y-auto z-40"
-                    >
-                        <h2 className="text-lg font-bold mb-3 text-gray-700 dark:text-gray-200">📘 Tutorials</h2>
-                        <ul className="space-y-2 text-sm">
-                            {snippets.map((s) => (
-                                <li key={s.id}>
-                                    <a
-                                        href={`#${s.slug}`}
-                                        className="text-blue-600 dark:text-blue-400 hover:underline"
-                                    >
-                                        {s.title}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            {/* Sidebar */}
+            <div className={`
+                bg-white dark:bg-zinc-900 shadow-lg z-50 transition-all duration-300
+                ${isOpen ? 'translate-x-0' : 'translate-x-full'}
+                fixed top-0 right-0 w-64 h-full sm:static sm:translate-x-0 sm:w-72 sm:h-auto sm:border-l sm:border-zinc-700
+            `}>
+                {/* Close button only on mobile */}
+                <div className="sm:hidden flex justify-end p-4">
+                    <button onClick={() => setIsOpen(false)} className="text-gray-600 dark:text-gray-300">
+                        <FiX size={24}/>
+                    </button>
+                </div>
+
+                <div className="p-4">
+                    <h2 className="text-lg font-bold mb-3 text-gray-700 dark:text-gray-200">📘 Tutorials</h2>
+                    <ul className="space-y-2 text-sm">
+                        {snippets.map((s) => (
+                            <li key={s.id}>
+                                <a
+                                    href={`#${s.slug}`}
+                                    className="text-blue-600 dark:text-blue-400 hover:underline"
+                                    onClick={() => setIsOpen(false)} // auto-close on mobile
+                                >
+                                    {s.title}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
         </>
     );
 }
