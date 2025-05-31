@@ -4,7 +4,7 @@ import SnippetViewer from './components/SnippetViewer';
 import snippetsData from './data/snippets';
 import {ErrorBoundary} from './components/ErrorBoundary';
 import Sidebar from './components/Sidebar';
-import {FiMenu} from 'react-icons/fi';
+import {FiMenu, FiArrowRight} from 'react-icons/fi';
 
 export default function App() {
     const [search, setSearch] = useState('');
@@ -69,14 +69,17 @@ export default function App() {
                         ))}
                     </div>
 
-                    {activeConcept && (
-                        <button
-                            onClick={() => setActiveConcept(null)}
-                            className="text-xs px-3 py-1 rounded-full border bg-red-500 text-white border-red-600 shrink-0"
-                        >
-                            Clear Filter
-                        </button>
-                    )}
+                    <button
+                        onClick={() => setActiveConcept(null)}
+                        disabled={!activeConcept}
+                        className={`w-full text-xs px-3 py-1 rounded-full border shrink-0 transition ${
+                            activeConcept
+                                ? 'bg-red-500 text-white border-red-600'
+                                : 'bg-zinc-200 dark:bg-zinc-800 text-zinc-400 border-zinc-300 dark:border-zinc-700 cursor-not-allowed'
+                        }`}
+                    >
+                        Clear Filter
+                    </button>
 
                 </div>
             </div>
@@ -110,11 +113,12 @@ export default function App() {
                                                 <code key={i} className="mr-1">{concept}</code>
                                             ))}
                                         </p>
+
                                         <Link
                                             to={`/tutorial/${snippet.slug}`}
-                                            className="text-indigo-500 hover:underline text-sm mt-2 inline-block"
+                                            className="inline-flex items-center gap-2 text-sm px-3 py-1 mt-2 rounded-full border border-indigo-600 text-indigo-600 hover:bg-indigo-50 dark:hover:bg-indigo-900 dark:border-indigo-400 dark:text-indigo-300 transition"
                                         >
-                                            Read More →
+                                            Read More <FiArrowRight />
                                         </Link>
                                     </div>
                                 </ErrorBoundary>
