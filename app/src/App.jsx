@@ -1,6 +1,5 @@
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
-import SnippetViewer from './components/SnippetViewer';
 import snippetsData from './data/snippets';
 import {ErrorBoundary} from './components/ErrorBoundary';
 import Sidebar from './components/Sidebar';
