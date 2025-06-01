@@ -19,6 +19,7 @@ function extractMetadata(content) {
 }
 
 const snippets = files.map((file, index) => {
+    index++;
     const slug = file.replace(/\.md$/, '').replace(/^\d+-/, '');
     const fullPath = path.join(dir, file);
     const content = fs.readFileSync(fullPath, 'utf-8');
