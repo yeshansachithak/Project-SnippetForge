@@ -37,8 +37,7 @@ export default function App() {
                 setIsOpen={setSidebarOpen}
                 snippets={snippetsData}
             />
-
-            <main className="pt-[200px] sm:pt-[220px] px-4 sm:px-6 max-w-7xl mx-auto">
+            <main className="pt-[100px] sm:pt-[240px] px-4 sm:px-6 max-w-7xl mx-auto pb-20">
                 <div className="flex flex-row-reverse">
                     <div className="flex-1 mt-4 pt-4 space-y-6 pr-0 sm:pr-4">
                         {filteredSnippets.map((snippet) => (

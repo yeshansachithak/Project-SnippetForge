@@ -3,32 +3,38 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeSlug from 'rehype-slug';
-import 'highlight.js/styles/github-dark.css'; // use a dark-friendly theme
+import 'highlight.js/styles/github-dark.css';
 
 export default function SnippetViewer({path}) {
     const [content, setContent] = useState('');
 
     useEffect(() => {
         fetch(path)
-            .then(res => res.text())
+            .then((res) => res.text())
             .then(setContent);
     }, [path]);
 
     useEffect(() => {
-        const blocks = document.querySelectorAll('pre code');
-        blocks.forEach(block => {
-            const button = document.createElement('button');
-            button.innerText = 'Copy';
-            button.className = 'absolute top-2 right-2 px-2 py-1 text-xs bg-gray-700 text-white rounded';
-            button.onclick = () => {
-                navigator.clipboard.writeText(block.innerText);
-                button.innerText = 'Copied!';
-                setTimeout(() => (button.innerText = 'Copy'), 1500);
-            };
-            const wrapper = block.parentElement;
-            wrapper.style.position = 'relative';
-            wrapper.appendChild(button);
-        });
+        // Delay slightly to let Markdown render first
+        const timeout = setTimeout(() => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                const wrapper = block.parentElement;
+                if (!wrapper.querySelector('button')) {
+                    const button = document.createElement('button');
+                    button.innerText = 'Copy';
+                    button.className =
+                        'absolute top-2 right-2 px-2 py-1 text-xs bg-gray-700 text-white rounded';
+                    button.onclick = () => {
+                        navigator.clipboard.writeText(block.innerText);
+                        button.innerText = 'Copied!';
+                        setTimeout(() => (button.innerText = 'Copy'), 1500);
+                    };
+                    wrapper.style.position = 'relative';
+                    wrapper.appendChild(button);
+                }
+            });
+        }, 50);
+        return () => clearTimeout(timeout);
     }, [content]);
 
     return (
