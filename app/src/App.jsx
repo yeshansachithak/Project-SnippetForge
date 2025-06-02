@@ -37,21 +37,20 @@ export default function App() {
                 setIsOpen={setSidebarOpen}
                 snippets={snippetsData}
             />
+
             <main className="pt-[100px] sm:pt-[240px] px-4 sm:px-6 max-w-7xl mx-auto pb-20">
-                <div className="flex flex-row-reverse">
-                    <div className="flex-1 mt-4 pt-4 space-y-6 pr-0 sm:pr-4">
-                        {filteredSnippets.map((snippet) => (
-                            <div
-                                key={snippet.id}
-                                id={snippet.slug}
-                                className="mb-10 scroll-mt-24"
-                            >
-                                <ErrorBoundary>
-                                    <SnippetCard snippet={snippet}/>
-                                </ErrorBoundary>
-                            </div>
-                        ))}
-                    </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-4">
+                    {filteredSnippets.map((snippet) => (
+                        <div
+                            key={snippet.id}
+                            id={snippet.slug}
+                            className="scroll-mt-24"
+                        >
+                            <ErrorBoundary>
+                                <SnippetCard snippet={snippet}/>
+                            </ErrorBoundary>
+                        </div>
+                    ))}
                 </div>
             </main>
         </div>
