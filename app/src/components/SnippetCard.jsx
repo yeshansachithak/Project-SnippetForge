@@ -6,8 +6,10 @@ export default function SnippetCard({snippet}) {
         <div
             className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 shadow-md rounded-xl p-4 sm:p-6">
             <p className="text-sm sm:text-base text-zinc-800 dark:text-zinc-200">
-                <strong>Title:</strong> <code
-                className="bg-zinc-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded text-xs">{snippet.title}</code>
+                <strong>Title:</strong>{' '}
+                <code className="bg-zinc-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded text-xs">
+                    {snippet.title}
+                </code>
                 <br/>
                 <strong>Summary:</strong> {snippet.summary}
                 <br/>

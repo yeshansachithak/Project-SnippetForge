@@ -2,7 +2,7 @@ import {useState} from 'react';
 import {Link} from 'react-router-dom';
 import snippetsData from './data/snippets';
 import {ErrorBoundary} from './components/ErrorBoundary';
-import SidebarDrawer from './components/SidebarDrawer';
+import Drawer from './components/Drawer';
 import SnippetCard from './components/SnippetCard';
 import Header from './components/Header';
 
@@ -32,7 +32,7 @@ export default function App() {
                 onMenuClick={() => setSidebarOpen(true)}
             />
 
-            <SidebarDrawer
+            <Drawer
                 isOpen={sidebarOpen}
                 setIsOpen={setSidebarOpen}
                 snippets={snippetsData}
