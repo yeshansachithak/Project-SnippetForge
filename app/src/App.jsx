@@ -21,10 +21,6 @@ export default function App() {
         snippet.title.toLowerCase().includes(search.toLowerCase()) && (!activeConcept || snippet.keyConcepts.includes(activeConcept))
     );
 
-    // const filteredSnippets = snippetsData.filter(snippet =>
-    //     snippet.title.toLowerCase().includes(search.toLowerCase())
-    // );
-
     return (
         <div className="relative">
             {/* Global Sticky Header */}
