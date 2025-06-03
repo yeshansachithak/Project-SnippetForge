@@ -195,6 +195,22 @@ const snippets = [
       "process.env"
     ],
     "file": "/snippets/15-env-variables-node.md"
+  },
+  {
+    "id": 16,
+    "slug": "react-hooks-overview",
+    "title": "React Hooks Overview",
+    "summary": "Learn the most essential React hooks like `useState`, `useEffect`, and `useContext` with sample code. Understand how each hook helps you manage state, side effects, and performance in functional components.",
+    "keyConcepts": [
+      "useState",
+      "useEffect",
+      "useContext",
+      "useRef",
+      "useMemo",
+      "useCallback",
+      "useReducer"
+    ],
+    "file": "/snippets/16-react-hooks-overview.md"
   }
 ];
 
