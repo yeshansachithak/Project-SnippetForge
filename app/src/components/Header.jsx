@@ -1,14 +1,7 @@
 import {Link} from 'react-router-dom';
 import {FiMenu} from 'react-icons/fi';
 
-export default function Header({
-                                   search,
-                                   setSearch,
-                                   allConcepts,
-                                   activeConcept,
-                                   setActiveConcept,
-                                   onMenuClick,
-                               }) {
+export default function Header({search, setSearch, allConcepts, activeConcept, setActiveConcept, onMenuClick,}) {
     return (
         <header
             className="fixed top-0 left-0 w-full z-40 bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-700 shadow-sm px-4 py-3 sm:py-4">
