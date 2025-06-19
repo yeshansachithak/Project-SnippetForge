@@ -38,7 +38,7 @@ export default function App() {
                 snippets={snippetsData}
             />
 
-            <main className="pt-[100px] sm:pt-[240px] px-4 sm:px-6 max-w-7xl mx-auto pb-20">
+            <main className="pt-[220px] sm:pt-[240px] px-4 sm:px-6 max-w-7xl mx-auto pb-20">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-4">
                     {filteredSnippets.map((snippet) => (
                         <div
