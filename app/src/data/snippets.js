@@ -211,6 +211,37 @@ const snippets = [
       "useReducer"
     ],
     "file": "/snippets/16-react-hooks-overview.md"
+  },
+  {
+    "id": 17,
+    "slug": "building-a-rest-api-in-laravel",
+    "title": "Building a REST API in Laravel: From Model to Test",
+    "summary": "Learn how to build a full-featured REST API in Laravel 10 using PHP 8.2. This tutorial covers everything from project setup to writing a feature test for CRUD operations.",
+    "keyConcepts": [
+      "Laravel 10",
+      "REST API",
+      "Eloquent",
+      "FormRequest",
+      "Service Layer",
+      "Feature Testing",
+      "CRUD"
+    ],
+    "file": "/snippets/17-building-a-rest-api-in-laravel.md"
+  },
+  {
+    "id": 18,
+    "slug": "blade-basics-and-layouts",
+    "title": "Blade Basics and Layouts",
+    "summary": "Learn how to use Laravel's Blade templating engine to build clean, reusable views with layouts, partials, and control structures.",
+    "keyConcepts": [
+      "Blade",
+      "@extends",
+      "@section",
+      "@include",
+      "layouts",
+      "components"
+    ],
+    "file": "/snippets/18-blade-basics-and-layouts.md"
   }
 ];
 
