@@ -40,15 +40,14 @@ export default function Header({search, setSearch, allConcepts, activeConcept, s
                     />
                 </div>
 
-                <div
-                    className="flex gap-x-2 gap-y-1 flex-wrap sm:flex-nowrap mb-2 overflow-x-auto py-2 scrollbar-hide px-1">
+                <div className="flex flex-nowrap overflow-x-auto gap-2 px-1 py-2 scrollbar-hide max-w-full snap-x snap-mandatory">
                     {allConcepts.map((concept) => (
                         <button
                             key={concept}
                             onClick={() =>
                                 setActiveConcept((c) => (c === concept ? null : concept))
                             }
-                            className={`text-xs px-3 py-1.5 rounded-full border transition shrink-0 hover:scale-[1.03] ${
+                            className={`text-xs px-3 py-1.5 rounded-full border transition shrink-0 snap-start hover:scale-[1.03] ${
                                 activeConcept === concept
                                     ? 'bg-indigo-600 text-white border-indigo-600 font-semibold'
                                     : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border-zinc-300 dark:border-zinc-700'
