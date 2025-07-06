@@ -242,6 +242,22 @@ const snippets = [
       "components"
     ],
     "file": "/snippets/18-blade-basics-and-layouts.md"
+  },
+  {
+    "id": 19,
+    "slug": "essential-laravel-artisan-commands",
+    "title": "Essential Laravel Artisan Commands",
+    "summary": "Learn how to use Laravel's powerful Artisan CLI to speed up development. This tutorial covers the most useful commands for generating files, running migrations, debugging, and more.",
+    "keyConcepts": [
+      "artisan",
+      "php artisan make",
+      "artisan serve",
+      "migrate",
+      "route:list",
+      "tinker",
+      "clear commands"
+    ],
+    "file": "/snippets/19-essential-laravel-artisan-commands.md"
   }
 ];
 
