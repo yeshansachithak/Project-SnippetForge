@@ -258,6 +258,22 @@ const snippets = [
       "clear commands"
     ],
     "file": "/snippets/19-essential-laravel-artisan-commands.md"
+  },
+  {
+    "id": 20,
+    "slug": "media3-webview-player",
+    "title": "Integrating Media3 ExoPlayer in a WebView-based TV App",
+    "summary": "Learn how to build a hybrid IPTV Android app using Media3 ExoPlayer with a WebView that communicates through JavaScript to play, pause, resize, and rotate video streams (MP4, UDP multicast, DRM).",
+    "keyConcepts": [
+      "android",
+      "iptv",
+      "media3",
+      "exoplayer",
+      "webview",
+      "udp",
+      "javascriptinterface"
+    ],
+    "file": "/snippets/20-media3-webview-player.md"
   }
 ];
 
