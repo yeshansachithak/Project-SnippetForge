@@ -274,6 +274,22 @@ const snippets = [
       "javascriptinterface"
     ],
     "file": "/snippets/20-media3-webview-player.md"
+  },
+  {
+    "id": 21,
+    "slug": "react-context-api-n-usereducer",
+    "title": "React Context API & useReducer",
+    "summary": "Build a scalable global state pattern in React using Context for dependency injection and useReducer for predictable state updates.",
+    "keyConcepts": [
+      "Context.Provider",
+      "useContext",
+      "useReducer",
+      "action types",
+      "immutability",
+      "selector hooks",
+      "lazy initialization"
+    ],
+    "file": "/snippets/21-react-context-api-n-usereducer.md"
   }
 ];
 

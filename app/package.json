@@ -6,6 +6,7 @@
         "generate-snippets": "node scripts/generateSnippets.js",
         "dev": "yarn generate-snippets && vite",
         "build": "vite build && cp -r public/snippets dist/",
+        "build-n-deploy": "yarn build && firebase deploy",
         "preview": "vite preview"
     },
     "dependencies": {
