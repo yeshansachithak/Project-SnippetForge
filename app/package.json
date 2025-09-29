@@ -5,8 +5,9 @@
     "scripts": {
         "generate-snippets": "node scripts/generateSnippets.js",
         "dev": "yarn generate-snippets && vite",
-        "build": "vite build && cp -r public/snippets dist/",
+        "build": "vite build && cp -r public/ dist/",
         "build-n-deploy": "yarn build && firebase deploy",
+        "run-all": "yarn generate-snippets && yarn build && firebase deploy",
         "preview": "vite preview"
     },
     "dependencies": {
@@ -14,6 +15,7 @@
         "highlight.js": "^11.7.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "react-helmet-async": "^2.0.5",
         "react-icons": "^5.5.0",
         "react-markdown": "8.0.7",
         "react-router-dom": "^7.6.1",

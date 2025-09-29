@@ -290,6 +290,232 @@ const snippets = [
       "lazy initialization"
     ],
     "file": "/snippets/21-react-context-api-n-usereducer.md"
+  },
+  {
+    "id": 22,
+    "slug": "nextjs_hello_world",
+    "title": "NextJS Hello World",
+    "summary": "Learn how to set up a new Next.js project and build a simple \"Hello World\" page using file-based routing.",
+    "keyConcepts": [
+      "create-next-app",
+      "pages routing",
+      "React components"
+    ],
+    "file": "/snippets/22-nextjs_hello_world.md"
+  },
+  {
+    "id": 23,
+    "slug": "nextjs_tailwind_starter",
+    "title": "NextJS Tailwind Starter",
+    "summary": "Add Tailwind CSS to a Next.js app and build a styled home page with reusable UI.",
+    "keyConcepts": [
+      "Tailwind CSS",
+      "PostCSS",
+      "utility-first styling",
+      "pages/_app.js"
+    ],
+    "file": "/snippets/23-nextjs_tailwind_starter.md"
+  },
+  {
+    "id": 24,
+    "slug": "nextjs_rest_api_and_data_fetching",
+    "title": "NextJS REST API",
+    "summary": "Build REST API routes in Next.js and consume them via SSR, SSG, and client-side fetch.",
+    "keyConcepts": [
+      "pages/api/*",
+      "getServerSideProps",
+      "getStaticProps",
+      "mutations"
+    ],
+    "file": "/snippets/24-nextjs_rest_api_and_data_fetching.md"
+  },
+  {
+    "id": 25,
+    "slug": "nextjs_auth_with_nextauth",
+    "title": "NextJS Auth with NextAuth",
+    "summary": "Add GitHub OAuth login to a Next.js (Pages Router) app using NextAuth, protect routes, and show session-aware UI.",
+    "keyConcepts": [
+      "next-auth",
+      "OAuth",
+      "SessionProvider",
+      "middleware",
+      "getServerSideProps"
+    ],
+    "file": "/snippets/25-nextjs_auth_with_nextauth.md"
+  },
+  {
+    "id": 26,
+    "slug": "nextjs_middleware_auth",
+    "title": "NextJS Middleware Auth",
+    "summary": "Protect pages and API routes in Next.js using middleware, session checks, and role-based access.",
+    "keyConcepts": [
+      "middleware.js",
+      "next-auth",
+      "matcher",
+      "redirects",
+      "role-based guard"
+    ],
+    "file": "/snippets/26-nextjs_middleware_auth.md"
+  },
+  {
+    "id": 27,
+    "slug": "nextjs_mongodb_crud",
+    "title": "NextJS MongoDB CRUD",
+    "summary": "Connect Next.js API routes to MongoDB with Mongoose and build a simple TODO CRUD UI.",
+    "keyConcepts": [
+      "Mongoose",
+      "MongoDB Atlas",
+      "pages/api",
+      "CRUD",
+      "getServerSideProps"
+    ],
+    "file": "/snippets/27-nextjs_mongodb_crud.md"
+  },
+  {
+    "id": 28,
+    "slug": "nextjs_shadcn_ui",
+    "title": "NextJS ShadCN UI",
+    "summary": "Integrate ShadCN UI into a Next.js app and build a styled dashboard page with components.",
+    "keyConcepts": [
+      "shadcn/ui",
+      "Tailwind CSS",
+      "Radix Primitives",
+      "components"
+    ],
+    "file": "/snippets/28-nextjs_shadcn_ui.md"
+  },
+  {
+    "id": 29,
+    "slug": "nextjs_ssr_vs_ssg",
+    "title": "NextJS SSR vs. SSG",
+    "summary": "Compare Server-Side Rendering (SSR) and Static Site Generation (SSG) in Next.js with examples and use-cases.",
+    "keyConcepts": [
+      "getServerSideProps",
+      "getStaticProps",
+      "revalidate",
+      "build-time vs runtime"
+    ],
+    "file": "/snippets/29-nextjs_ssr_vs_ssg.md"
+  },
+  {
+    "id": 30,
+    "slug": "nextjs_image_optimization",
+    "title": "NextJS Image Optimization",
+    "summary": "Optimize images in Next.js using the `<Image />` component, responsive sizing, blur placeholders, and remote domains configuration.",
+    "keyConcepts": [
+      "next/image",
+      "responsive",
+      "placeholder=\"blur\"",
+      "next.config.js",
+      "static import",
+      "remotePatterns"
+    ],
+    "file": "/snippets/30-nextjs_image_optimization.md"
+  },
+  {
+    "id": 31,
+    "slug": "nextjs_vercel_deploy",
+    "title": "NextJS Vercel Deploy",
+    "summary": "Deploy a Next.js app to Vercel, set up environment variables, and manage preview vs production builds.",
+    "keyConcepts": [
+      "Vercel CLI",
+      "git integration",
+      "environment variables",
+      "preview vs production"
+    ],
+    "file": "/snippets/31-nextjs_vercel_deploy.md"
+  },
+  {
+    "id": 32,
+    "slug": "go_setup_hello",
+    "title": "Go Setup & Hello World",
+    "summary": "Learn how to install Go, configure your workspace, and run your first \"Hello World\" program.",
+    "keyConcepts": [
+      "Go installation",
+      "Go modules",
+      "go run",
+      "hello world"
+    ],
+    "file": "/snippets/32-go_setup_hello.md"
+  },
+  {
+    "id": 33,
+    "slug": "go_understanding_syntax",
+    "title": "Understanding Go Syntax",
+    "summary": "Learn Go’s core syntax: variables, types, functions, control flow, collections, structs, and interfaces.",
+    "keyConcepts": [
+      "variables",
+      "types",
+      "functions",
+      "multiple return",
+      "defer",
+      "if/switch",
+      "for",
+      "slices",
+      "maps",
+      "structs",
+      "methods",
+      "interfaces",
+      "errors"
+    ],
+    "file": "/snippets/33-go_understanding_syntax.md"
+  },
+  {
+    "id": 34,
+    "slug": "go_structs_interfaces",
+    "title": "Structs, Methods & Interfaces",
+    "summary": "Learn how Go models data and behavior using structs, methods, and interfaces.",
+    "keyConcepts": [
+      "structs",
+      "methods",
+      "value receiver",
+      "pointer receiver",
+      "interfaces",
+      "implicit implementation"
+    ],
+    "file": "/snippets/34-go_structs_interfaces.md"
+  },
+  {
+    "id": 35,
+    "slug": "go_error_handling",
+    "title": "Error Handling in Go",
+    "summary": "Learn idiomatic error handling in Go, including returning errors, custom error types, `panic`/`recover`, and wrapping.",
+    "keyConcepts": [
+      "error interface",
+      "errors.New",
+      "fmt.Errorf",
+      "panic",
+      "recover",
+      "custom error types",
+      "wrapping"
+    ],
+    "file": "/snippets/35-go_error_handling.md"
+  },
+  {
+    "id": 36,
+    "slug": "go_cli_tool",
+    "title": "Go CLI Tool",
+    "summary": "Build a simple command-line tool in Go that accepts flags and arguments to perform basic operations.",
+    "keyConcepts": [
+      "os.Args",
+      "flag"
+    ],
+    "file": "/snippets/36-go_cli_tool.md"
+  },
+  {
+    "id": 37,
+    "slug": "go_json_handling",
+    "title": "JSON Handling in Go",
+    "summary": "Learn how to parse JSON into structs, encode Go data into JSON, and work with APIs.",
+    "keyConcepts": [
+      "encoding/json",
+      "struct tags",
+      "json.Marshal",
+      "json.Unmarshal",
+      "omitempty",
+      "map[string]interface{}"
+    ],
+    "file": "/snippets/37-go_json_handling.md"
   }
 ];
 
